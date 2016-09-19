@@ -31,4 +31,7 @@ DBPASS=test_forum
 # Remove users whose user_field_1 (custom profile field) equals their username
 echo "DELETE FROM users WHERE user_field_1 = username" | mysql -D $DBNAME -u$DBUSER -p$DBPASS
 
+# Remove website links for users with 0 posts
+echo "UPDATE users SET user_website = '' WHERE user_posts = 0 AND user_website LIKE 'http%'" | mysql -D $DBNAME -u$DBUSER -p$DBPASS
+
 # EOF
