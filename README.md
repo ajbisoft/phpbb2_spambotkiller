@@ -2,8 +2,9 @@
 
 ## Description
 
-Simple shell script to remove fake/SPAM user accounts from phpBB2 forums.
+Simple shell script to remove fake/SPAM user accounts and backlinks from phpBB2 forums.
 Script removes all users whose custom user field equals their username, as it's a sign that user was autocreated by bot.
+Script also removes all URLs from user_website field if number of posts equals 0.
 
 ## Configuration
 
